@@ -74,10 +74,29 @@ function renderMapTab() {
   const svg = document.getElementById('mapSvg');
   svg.dataset.rendered = '1';
   svg.setAttribute('viewBox', '0 0 1000 1000');
-  svg.innerHTML = LOCATIONS.map(loc =>
-    `<circle class="map-point" data-id="${loc.id}" cx="${loc.x}" cy="${loc.y}" r="6"></circle>
-     <text class="map-label" x="${loc.x + 9}" y="${loc.y + 4}">${loc.name}</text>`
+
+  let stars = '';
+  for (let i = 0; i < 220; i++) {
+    const x = Math.random() * 1000;
+    const y = Math.random() * 1000;
+    const r = Math.random() * 1.2 + 0.3;
+    const o = Math.random() * 0.6 + 0.2;
+    stars += `<circle class="map-star" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" opacity="${o.toFixed(2)}"></circle>`;
+  }
+
+  const segLabels = SEGMENTA.map(s =>
+    `<text class="segmentum-label" x="${s.x}" y="${s.y}" text-anchor="middle">${s.name.toUpperCase()}</text>`
   ).join('');
+
+  const points = LOCATIONS.map(loc => `
+    <g class="map-point-group" data-id="${loc.id}">
+      <circle class="map-point-halo" cx="${loc.x}" cy="${loc.y}" r="13"></circle>
+      <circle class="map-point" data-id="${loc.id}" cx="${loc.x}" cy="${loc.y}" r="5.5"></circle>
+      <text class="map-label" x="${loc.x + 9}" y="${loc.y + 4}">${loc.name}</text>
+    </g>`).join('');
+
+  svg.innerHTML = `<g class="map-stars">${stars}</g><g class="map-segmenta">${segLabels}</g><g class="map-points">${points}</g>`;
+
   svg.querySelectorAll('.map-point').forEach(el => {
     el.addEventListener('click', () => showLocationPopup(el.dataset.id, window.__selectedMapLegion || null));
   });
@@ -97,7 +116,7 @@ function selectLegionOnMap(slug) {
     usedIds.add(l.homeworldLocationId);
     l.timeline.forEach(ev => usedIds.add(ev.locationId));
   }
-  svg.querySelectorAll('.map-point').forEach(el => {
+  svg.querySelectorAll('.map-point-group').forEach(el => {
     el.classList.toggle('dimmed', !!l && !usedIds.has(el.dataset.id));
   });
   if (l) {
@@ -109,7 +128,7 @@ function selectLegionOnMap(slug) {
       path.setAttribute('d', d);
       path.setAttribute('class', 'map-path');
       path.style.stroke = l.colors.primary;
-      svg.insertBefore(path, svg.firstChild);
+      svg.insertBefore(path, svg.querySelector('.map-points'));
     }
   }
 }

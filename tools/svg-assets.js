@@ -279,6 +279,52 @@ function generateAll() {
   }
 }
 
-generateAll();
+function buildHeroSvg() {
+  let stars = '';
+  for (let i = 0; i < 140; i++) {
+    const x = (Math.sin(i * 12.9898) * 43758.5453 % 1 + 1) % 1 * 1600;
+    const y = (Math.sin(i * 78.233) * 12543.98 % 1 + 1) % 1 * 480;
+    const r = (i % 5 === 0) ? 1.6 : 0.8;
+    const o = 0.25 + (i % 7) * 0.08;
+    stars += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="#ffffff" opacity="${o.toFixed(2)}"/>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="heroBg" cx="72%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1c2230"/>
+      <stop offset="45%" stop-color="#12151c"/>
+      <stop offset="100%" stop-color="#0b0d10"/>
+    </radialGradient>
+    <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9a4d" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ff9a4d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rimLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a227" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#c9a227" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1600" height="480" fill="url(#heroBg)"/>
+  <g opacity="0.85">${stars}</g>
+  <g transform="translate(980,60)">
+    <ellipse cx="230" cy="330" rx="260" ry="150" fill="#0d0f14"/>
+    <path d="M40,260 Q10,150 90,90 Q160,30 260,30 Q360,30 430,90 Q510,150 480,260 L470,420 L50,420 Z" fill="#141821"/>
+    <path d="M430,90 Q510,150 480,260 L470,340 L455,340 L462,255 Q485,155 415,100 Z" fill="url(#rimLight)"/>
+    <path d="M110,150 Q120,60 260,55 Q400,60 410,150 Q415,230 335,255 L185,255 Q105,230 110,150 Z" fill="#1b202b"/>
+    <path d="M150,155 h70 v34 h-70 z M290,155 h70 v34 h-70 z M245,172 v46 h30 v-46 z" fill="#05060a"/>
+    <circle cx="184" cy="172" r="30" fill="url(#lensGlow)"/>
+    <circle cx="184" cy="172" r="10" fill="#ffb066"/>
+    <circle cx="336" cy="172" r="30" fill="url(#lensGlow)"/>
+    <circle cx="336" cy="172" r="10" fill="#ffb066"/>
+    <path d="M410,150 Q415,230 335,255" fill="none" stroke="#3a4252" stroke-width="4"/>
+    <path d="M60,270 Q230,340 460,270 L470,420 L50,420 Z" fill="#12151c" opacity="0.9"/>
+  </g>
+  <rect x="0" y="0" width="1600" height="480" fill="#000000" opacity="0.12"/>
+</svg>`;
+}
 
-module.exports = { buildEmblemSvg, buildMarineSvg, cogPath, starPath, polar, LEGION_VISUALS };
+generateAll();
+fs.writeFileSync(path.join(__dirname, '..', 'assets', 'hero.svg'), buildHeroSvg());
+console.log('wrote hero.svg');
+
+module.exports = { buildEmblemSvg, buildMarineSvg, buildHeroSvg, cogPath, starPath, polar, LEGION_VISUALS };

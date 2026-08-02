@@ -7,12 +7,21 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <h1>Adeptus Astartes: Легионы Космического Десанта</h1>
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="orders">Ордена</button>
-    <button class="tab-btn" data-tab="map">Карта галактики</button>
-  </nav>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="cornerCross" viewBox="0 0 40 40">
+    <path d="M17,2 h6 v11 h11 v6 h-11 v11 h-6 v-11 h-11 v-6 h11 z" />
+  </symbol>
+</svg>
+<header class="site-header hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Adeptus Astartes: Легионы Космического Десанта</h1>
+    <p class="hero-subtitle">Хроники Первого Основания — девять орденов, сохранивших верность, и девять легионов, обратившихся к Хаосу</p>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="orders">Ордена</button>
+      <button class="tab-btn" data-tab="map">Карта галактики</button>
+    </nav>
+  </div>
 </header>
 <main>
   <section class="tab-panel active" id="panel-orders">
@@ -25,11 +34,19 @@
     <div class="order-detail hidden" id="orderDetail"></div>
   </section>
   <section class="tab-panel" id="panel-map">
+    <div class="map-header">
+      <svg class="corner-ornament corner-tl" viewBox="0 0 40 40"><use href="#cornerCross"/></svg>
+      <svg class="corner-ornament corner-tr" viewBox="0 0 40 40"><use href="#cornerCross"/></svg>
+      <h2>Карта галактики</h2>
+      <p class="map-subtitle">Астрономикон · схематичная звёздная карта похождений легионов</p>
+    </div>
     <div class="map-controls">
       <label for="mapLegionSelect">Легион:</label>
       <select id="mapLegionSelect"></select>
     </div>
     <div class="map-wrap">
+      <svg class="corner-ornament corner-bl" viewBox="0 0 40 40"><use href="#cornerCross"/></svg>
+      <svg class="corner-ornament corner-br" viewBox="0 0 40 40"><use href="#cornerCross"/></svg>
       <svg id="mapSvg" xmlns="http://www.w3.org/2000/svg"></svg>
       <div class="map-popup hidden" id="mapPopup"></div>
     </div>
