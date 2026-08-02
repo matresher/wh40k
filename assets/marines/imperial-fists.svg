@@ -5,7 +5,7 @@
   <polygon points="118,150 108,180 125,175" fill="#8a1f1f"/>
   <polygon points="182,150 192,180 175,175" fill="#8a1f1f"/>
   <ellipse cx="55" cy="195" rx="38" ry="34" fill="#1a1a1a" stroke="#8a1f1f" stroke-width="3"/>
-  <g transform="translate(21,161) scale(0.31)"><path d="M70,120 h80 v55 a40,40 0 0 1 -80,0 Z" fill="#1a1a1a" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M78,110 h16 v25 h-16 z M100,102 h16 v33 h-16 z M122,102 h16 v33 h-16 z M144,110 h14 v25 h-14 z" fill="#1a1a1a" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M60,140 L78,130 L78,165 L60,168 Z" fill="#1a1a1a" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(21,161) scale(0.31)"><path d="M70,120 h80 v55 a40,40 0 0 1 -80,0 Z" fill="#e0b400" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M78,110 h16 v25 h-16 z M100,102 h16 v33 h-16 z M122,102 h16 v33 h-16 z M144,110 h14 v25 h-14 z" fill="#e0b400" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M60,140 L78,130 L78,165 L60,168 Z" fill="#e0b400" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/></g>
   <ellipse cx="245" cy="195" rx="38" ry="34" fill="#e0b400" stroke="#8a1f1f" stroke-width="3"/>
   <rect x="88" y="185" width="26" height="95" rx="10" fill="#e0b400"/>
   <rect x="186" y="185" width="26" height="95" rx="10" fill="#e0b400"/>

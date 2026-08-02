@@ -96,9 +96,9 @@ const LEGION_VISUALS = {
     status: 'loyalist',
     primary: '#e0b400', secondary: '#1a1a1a', trim: '#8a1f1f', helmet: '#d1a600',
     emblemPaths: [
-      { d: 'M70,120 h80 v55 a40,40 0 0 1 -80,0 Z', fill: '#1a1a1a' },
-      { d: 'M78,110 h16 v25 h-16 z M100,102 h16 v33 h-16 z M122,102 h16 v33 h-16 z M144,110 h14 v25 h-14 z', fill: '#1a1a1a' },
-      { d: 'M60,140 L78,130 L78,165 L60,168 Z', fill: '#1a1a1a' }
+      { d: 'M70,120 h80 v55 a40,40 0 0 1 -80,0 Z', fill: '#e0b400' },
+      { d: 'M78,110 h16 v25 h-16 z M100,102 h16 v33 h-16 z M122,102 h16 v33 h-16 z M144,110 h14 v25 h-14 z', fill: '#e0b400' },
+      { d: 'M60,140 L78,130 L78,165 L60,168 Z', fill: '#e0b400' }
     ]
   },
   'blood-angels': {
