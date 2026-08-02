@@ -71,7 +71,72 @@ function closeLegionDetail() {
 }
 
 function renderMapTab() {
-  document.getElementById('mapSvg').dataset.rendered = '1';
+  const svg = document.getElementById('mapSvg');
+  svg.dataset.rendered = '1';
+  svg.setAttribute('viewBox', '0 0 1000 1000');
+  svg.innerHTML = LOCATIONS.map(loc =>
+    `<circle class="map-point" data-id="${loc.id}" cx="${loc.x}" cy="${loc.y}" r="6"></circle>
+     <text class="map-label" x="${loc.x + 9}" y="${loc.y + 4}">${loc.name}</text>`
+  ).join('');
+  svg.querySelectorAll('.map-point').forEach(el => {
+    el.addEventListener('click', () => showLocationPopup(el.dataset.id, window.__selectedMapLegion || null));
+  });
+
+  const selector = document.getElementById('mapLegionSelect');
+  selector.innerHTML = '<option value="">— Все легионы —</option>' + LEGIONS.map(l => `<option value="${l.slug}">${l.nameRu}</option>`).join('');
+  selector.addEventListener('change', () => selectLegionOnMap(selector.value || null));
+}
+
+function selectLegionOnMap(slug) {
+  window.__selectedMapLegion = slug;
+  const svg = document.getElementById('mapSvg');
+  svg.querySelectorAll('.map-path').forEach(p => p.remove());
+  const l = slug ? bySlug(slug) : null;
+  const usedIds = new Set();
+  if (l) {
+    usedIds.add(l.homeworldLocationId);
+    l.timeline.forEach(ev => usedIds.add(ev.locationId));
+  }
+  svg.querySelectorAll('.map-point').forEach(el => {
+    el.classList.toggle('dimmed', !!l && !usedIds.has(el.dataset.id));
+  });
+  if (l) {
+    const points = [l.homeworldLocationId, ...l.timeline.map(ev => ev.locationId)]
+      .map(id => byLocationId(id)).filter(Boolean);
+    if (points.length > 1) {
+      const d = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ');
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
+      path.setAttribute('class', 'map-path');
+      path.style.stroke = l.colors.primary;
+      svg.insertBefore(path, svg.firstChild);
+    }
+  }
+}
+
+function showLocationPopup(locationId, slug) {
+  const loc = byLocationId(locationId);
+  if (!loc) return;
+  const relevant = slug ? [bySlug(slug)].filter(Boolean)
+    : LEGIONS.filter(l => l.homeworldLocationId === locationId || l.timeline.some(ev => ev.locationId === locationId));
+  let body = `<h4>${loc.name}</h4><p class="map-popup-meta">${loc.segmentum}</p><p>${loc.blurb}</p>`;
+  for (const rl of relevant) {
+    const events = rl.timeline.filter(ev => ev.locationId === locationId);
+    const isHome = rl.homeworldLocationId === locationId;
+    if (!events.length && !isHome) continue;
+    body += `<div class="map-popup-legion"><strong>${rl.nameRu}</strong>`;
+    if (isHome) body += `<div>Родной мир легиона.</div>`;
+    body += events.map(ev => `<div><em>${ev.era}</em> — ${ev.title}: ${ev.description}</div>`).join('');
+    body += `</div>`;
+  }
+  const popup = document.getElementById('mapPopup');
+  popup.innerHTML = body + '<button id="mapPopupClose">Закрыть</button>';
+  popup.classList.remove('hidden');
+  document.getElementById('mapPopupClose').addEventListener('click', hideLocationPopup);
+}
+
+function hideLocationPopup() {
+  document.getElementById('mapPopup').classList.add('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
