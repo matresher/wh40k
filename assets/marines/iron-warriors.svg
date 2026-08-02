@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+  <polygon points="120,300 130,400 145,400 150,310 155,400 170,400 180,300" fill="#5a5a5a"/>
+  <rect x="115" y="278" width="70" height="26" fill="#2e2e2e"/>
+  <path d="M110,175 L100,285 L200,285 L190,175 Z" fill="#5a5a5a"/>
+  <polygon points="118,150 108,180 125,175" fill="#b8860b"/>
+  <polygon points="182,150 192,180 175,175" fill="#b8860b"/>
+  <ellipse cx="55" cy="195" rx="38" ry="34" fill="#2e2e2e" stroke="#b8860b" stroke-width="3"/>
+  <g transform="translate(21,161) scale(0.31)"><path d="M78,95 h64 v90 h-64 z" fill="#b8860b" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M78,80 h12 v18 h-12 z M100,80 h12 v18 h-12 z M122,80 h12 v18 h-12 z M144,132 h-12 v-18 h12 z" fill="#b8860b" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M104,120 h12 v30 h-12 z" fill="#2e2e2e" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <ellipse cx="245" cy="195" rx="38" ry="34" fill="#5a5a5a" stroke="#b8860b" stroke-width="3"/>
+  <rect x="88" y="185" width="26" height="95" rx="10" fill="#5a5a5a"/>
+  <rect x="186" y="185" width="26" height="95" rx="10" fill="#5a5a5a"/>
+  <ellipse cx="150" cy="110" rx="52" ry="58" fill="#2e2e2e"/>
+  <path d="M118,105 h26 v14 h-26 z M156,105 h26 v14 h-26 z M144,116 v18 h12 v-18 z" fill="#b8860b"/>
+</svg>

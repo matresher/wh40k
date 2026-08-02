@@ -142,6 +142,97 @@ const LEGION_VISUALS = {
     emblemPaths: [
       { d: 'M110,80 C90,80 40,95 30,130 C55,120 75,120 90,128 C70,140 55,158 50,178 C75,165 95,150 110,150 C125,150 145,165 170,178 C165,158 150,140 130,128 C145,120 165,120 190,130 C180,95 130,80 110,80 Z', fill: '#e6e6e6' }
     ]
+  },
+  'emperors-children': {
+    status: 'traitor',
+    primary: '#4a1a5c', secondary: '#2a0e38', trim: '#c9a227',
+    emblemPaths: [
+      { d: 'M70,165 C50,140 50,90 78,62', stroke: '#c9a227', strokeWidth: 10 },
+      { d: 'M150,165 C170,140 170,90 142,62', stroke: '#c9a227', strokeWidth: 10 },
+      { d: 'M58,150 L70,165 L52,168 Z M62,120 L74,130 L58,136 Z M68,95 L80,102 L66,110 Z', fill: '#c9a227' },
+      { d: 'M162,150 L150,165 L168,168 Z M158,120 L146,130 L162,136 Z M152,95 L140,102 L154,110 Z', fill: '#c9a227' },
+      { d: 'M110,50 a13,13 0 1 0 0.1,0 Z', fill: '#c9a227' }
+    ]
+  },
+  'iron-warriors': {
+    status: 'traitor',
+    primary: '#5a5a5a', secondary: '#2e2e2e', trim: '#b8860b',
+    emblemPaths: [
+      { d: 'M78,95 h64 v90 h-64 z', fill: '#b8860b' },
+      { d: 'M78,80 h12 v18 h-12 z M100,80 h12 v18 h-12 z M122,80 h12 v18 h-12 z M144,132 h-12 v-18 h12 z', fill: '#b8860b' },
+      { d: 'M104,120 h12 v30 h-12 z', fill: '#2e2e2e' }
+    ]
+  },
+  'night-lords': {
+    status: 'traitor',
+    primary: '#0d1a33', secondary: '#050a14', trim: '#b8c0cc',
+    emblemPaths: [
+      { d: 'M110,58 a44,50 0 1 0 0.1,0 Z', fill: '#b8c0cc' },
+      { d: 'M92,102 a8,8 0 1 0 0.1,0 Z', fill: '#050a14' },
+      { d: 'M128,102 a8,8 0 1 0 0.1,0 Z', fill: '#050a14' },
+      { d: 'M70,128 L150,128 L140,158 L128,132 L118,158 L108,132 L98,158 L88,132 Z', fill: '#b8c0cc' },
+      { d: 'M70,55 L112,108 L92,118 L155,178', stroke: '#0d1a33', strokeWidth: 13 }
+    ]
+  },
+  'world-eaters': {
+    status: 'traitor',
+    primary: '#6b1010', secondary: '#3a0a0a', trim: '#c7b98a',
+    emblemPaths: [
+      { d: 'M110,60 a45,45 0 1 0 0.1,0 Z', fill: '#c7b98a' },
+      { d: 'M92,95 a8,8 0 1 0 0.1,0 Z', fill: '#1a1a1a' },
+      { d: 'M128,95 a8,8 0 1 0 0.1,0 Z', fill: '#1a1a1a' },
+      { d: 'M75,120 L145,120 L135,150 L125,125 L115,150 L105,125 L95,150 L85,125 Z', fill: '#c7b98a' },
+      { d: 'M65,80 L45,55 L70,65 Z', fill: '#c7960a' },
+      { d: 'M155,80 L175,55 L150,65 Z', fill: '#c7960a' }
+    ]
+  },
+  'death-guard': {
+    status: 'traitor',
+    primary: '#5a6b3a', secondary: '#3a4526', trim: '#c9b98a',
+    emblemPaths: [
+      { d: 'M110,110 a40,40 0 1 0 0.1,0 Z', fill: '#c9b98a' },
+      { d: 'M96,102 a7,7 0 1 0 0.1,0 Z', fill: '#3a4526' },
+      { d: 'M124,102 a7,7 0 1 0 0.1,0 Z', fill: '#3a4526' },
+      { d: 'M110,118 L102,132 L118,132 Z', fill: '#3a4526' },
+      { d: 'M70,90 C40,70 30,110 60,130 C50,105 60,95 70,90 Z', fill: '#5a6b3a' },
+      { d: 'M150,90 C180,70 190,110 160,130 C170,105 160,95 150,90 Z', fill: '#5a6b3a' }
+    ]
+  },
+  'thousand-sons': {
+    status: 'traitor',
+    primary: '#1c3a6b', secondary: '#0f1f3d', trim: '#d9a916',
+    emblemPaths: [
+      { d: 'REPLACE_STAR_10', fill: '#d9a916' },
+      { d: 'M110,110 a26,17 0 1 0 0.1,0 Z', fill: '#0f1f3d' },
+      { d: 'M110,110 a7,7 0 1 0 0.1,0 Z', fill: '#d9a916' }
+    ]
+  },
+  'black-legion': {
+    status: 'traitor',
+    primary: '#0d0d0d', secondary: '#1a1a1a', trim: '#9aa5b0',
+    emblemPaths: [
+      { d: 'REPLACE_STAR_8', fill: '#9aa5b0' },
+      { d: 'M95,10 L125,10 L110,55 Z', fill: '#12141a' }
+    ]
+  },
+  'word-bearers': {
+    status: 'traitor',
+    primary: '#5c1010', secondary: '#2e0808', trim: '#a8791f',
+    emblemPaths: [
+      { d: 'REPLACE_STAR_7', fill: '#a8791f' },
+      { d: 'M75,165 L110,155 L110,182 L75,192 Z', fill: '#a8791f' },
+      { d: 'M145,165 L110,155 L110,182 L145,192 Z', fill: '#8a651a' }
+    ]
+  },
+  'alpha-legion': {
+    status: 'traitor',
+    primary: '#0f4d3d', secondary: '#082e24', trim: '#8ac9a0',
+    emblemPaths: [
+      { d: 'M50,160 C90,120 40,90 80,50', stroke: '#8ac9a0', strokeWidth: 10 },
+      { d: 'M170,160 C130,120 180,90 140,50', stroke: '#8ac9a0', strokeWidth: 10 },
+      { d: 'M68,45 L90,45 L79,62 Z', fill: '#8ac9a0' },
+      { d: 'M152,45 L130,45 L141,62 Z', fill: '#8ac9a0' }
+    ]
   }
 };
 
@@ -150,6 +241,15 @@ function generateAll() {
   for (const [slug, v] of Object.entries(LEGION_VISUALS)) {
     if (slug === 'iron-hands') {
       v.emblemPaths[0].d = cogPath(110, 110, 92, 78, 12);
+    }
+    if (slug === 'thousand-sons') {
+      v.emblemPaths[0].d = starPath(110, 110, 95, 55, 10);
+    }
+    if (slug === 'black-legion') {
+      v.emblemPaths[0].d = starPath(110, 110, 95, 42, 8);
+    }
+    if (slug === 'word-bearers') {
+      v.emblemPaths[0].d = starPath(110, 95, 80, 38, 7);
     }
     const ring = v.status === 'loyalist' ? '#c9a227' : '#8a1f2b';
     fs.writeFileSync(path.join(outDir, 'assets', 'emblems', `${slug}.svg`), buildEmblemSvg({ paths: v.emblemPaths, ring }));
