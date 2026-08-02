@@ -1,0 +1,67 @@
+:root {
+  --bg: #0b0d10;
+  --panel: #14171c;
+  --panel-2: #1b1f26;
+  --text: #d9dde3;
+  --muted: #8892a0;
+  --gold: #c9a227;
+  --crimson: #8a1f2b;
+  --border: #2a2f38;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; }
+.site-header { padding: 1.5rem 2rem 0.5rem; border-bottom: 1px solid var(--border); }
+.site-header h1 { margin: 0 0 1rem; font-size: 1.6rem; letter-spacing: 0.05em; }
+.tabs { display: flex; gap: 0.5rem; }
+.tab-btn, .filter-btn { background: var(--panel); color: var(--text); border: 1px solid var(--border); padding: 0.5rem 1.2rem; cursor: pointer; font-family: inherit; font-size: 0.95rem; }
+.tab-btn.active, .filter-btn.active { background: var(--gold); color: #1a1a1a; border-color: var(--gold); }
+.tab-panel { display: none; padding: 1.5rem 2rem; }
+.tab-panel.active { display: block; }
+.filters { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.hidden { display: none !important; }
+
+.orders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.order-card { background: var(--panel); border: 1px solid var(--border); padding: 1rem; text-align: center; cursor: pointer; transition: border-color 0.15s; }
+.order-card:hover { border-color: var(--gold); }
+.order-card.status-traitor:hover { border-color: var(--crimson); }
+.order-card-emblem { width: 64px; height: 64px; margin-bottom: 0.5rem; }
+.order-card-name { font-weight: bold; }
+.order-card-number { color: var(--muted); font-size: 0.85rem; }
+.order-card-badge { display: inline-block; margin-top: 0.5rem; padding: 0.15rem 0.6rem; font-size: 0.75rem; border-radius: 2px; }
+.order-card-badge.status-loyalist { background: rgba(201,162,39,0.15); color: var(--gold); border: 1px solid var(--gold); }
+.order-card-badge.status-traitor { background: rgba(138,31,43,0.2); color: #e0616e; border: 1px solid var(--crimson); }
+
+.order-detail { background: var(--panel); border: 1px solid var(--border); padding: 1.5rem; }
+.back-btn { background: none; border: none; color: var(--gold); cursor: pointer; font-family: inherit; margin-bottom: 1rem; padding: 0; font-size: 0.95rem; }
+.detail-header { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; }
+.detail-marine { width: 160px; flex-shrink: 0; }
+.detail-emblem { width: 56px; height: 56px; }
+.detail-header-info h2 { margin: 0.4rem 0 0.2rem; }
+.legion-number { color: var(--muted); font-weight: normal; font-size: 0.9rem; }
+.emblem-desc { color: var(--muted); font-size: 0.9rem; max-width: 40em; }
+.order-detail section { margin-top: 1.2rem; }
+.order-detail h3 { border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); }
+.timeline { list-style: none; padding: 0; }
+.timeline li { margin-bottom: 0.5rem; }
+.timeline-era { color: var(--muted); font-size: 0.85rem; margin-right: 0.4rem; }
+
+.map-controls { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.map-controls select { background: var(--panel); color: var(--text); border: 1px solid var(--border); padding: 0.4rem; font-family: inherit; }
+.map-wrap { position: relative; background: var(--panel-2); border: 1px solid var(--border); overflow: hidden; }
+#mapSvg { width: 100%; height: 70vh; display: block; }
+.map-point { fill: var(--gold); stroke: #0b0d10; stroke-width: 1; cursor: pointer; }
+.map-point.dimmed { fill: #3a3f47; opacity: 0.5; }
+.map-label { fill: var(--muted); font-size: 9px; pointer-events: none; }
+.map-path { fill: none; stroke-width: 1.5; opacity: 0.85; }
+.map-popup { position: absolute; top: 1rem; right: 1rem; width: 300px; max-height: 60vh; overflow-y: auto; background: var(--panel); border: 1px solid var(--gold); padding: 1rem; font-size: 0.9rem; }
+.map-popup h4 { margin: 0 0 0.2rem; }
+.map-popup-meta { color: var(--muted); font-size: 0.8rem; margin: 0 0 0.6rem; }
+.map-popup-legion { margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--border); }
+.map-popup button { margin-top: 0.8rem; background: var(--gold); border: none; padding: 0.4rem 1rem; cursor: pointer; }
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem; }
+  .tab-panel { padding: 1rem; }
+  .detail-header { flex-direction: column; align-items: center; text-align: center; }
+  .map-popup { position: static; width: auto; margin-top: 1rem; }
+}

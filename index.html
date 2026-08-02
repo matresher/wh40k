@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adeptus Astartes — Легионы</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Adeptus Astartes: Легионы Космического Десанта</h1>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="orders">Ордена</button>
+    <button class="tab-btn" data-tab="map">Карта галактики</button>
+  </nav>
+</header>
+<main>
+  <section class="tab-panel active" id="panel-orders">
+    <div class="filters" id="ordersFilters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="loyalist">Лоялисты</button>
+      <button class="filter-btn" data-filter="traitor">Отступники</button>
+    </div>
+    <div class="orders-grid" id="ordersGrid"></div>
+    <div class="order-detail hidden" id="orderDetail"></div>
+  </section>
+  <section class="tab-panel" id="panel-map">
+    <div class="map-controls">
+      <label for="mapLegionSelect">Легион:</label>
+      <select id="mapLegionSelect"></select>
+    </div>
+    <div class="map-wrap">
+      <svg id="mapSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="map-popup hidden" id="mapPopup"></div>
+    </div>
+  </section>
+</main>
+<script src="map-data.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
