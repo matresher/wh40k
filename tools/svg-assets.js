@@ -28,13 +28,21 @@ function starPath(cx, cy, rOuter, rInner, points) {
   return pts.join(' ') + ' Z';
 }
 
+const SHIELD_D = 'M30,42 Q30,18 54,18 L166,18 Q190,18 190,42 L190,108 Q190,168 110,202 Q30,168 30,108 Z';
+
+let emblemClipCounter = 0;
+
 function buildEmblemSvg({ paths, ring }) {
+  emblemClipCounter += 1;
+  const clipId = `shieldClip${emblemClipCounter}`;
   const markup = paths.map(p =>
     `<path d="${p.d}" fill="${p.fill || 'none'}" stroke="${p.stroke || 'none'}" stroke-width="${p.strokeWidth || 0}" stroke-linecap="round" stroke-linejoin="round"/>`
   ).join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
-  <circle cx="110" cy="110" r="102" fill="#12141a" stroke="${ring}" stroke-width="6"/>
-  ${markup}
+  <defs><clipPath id="${clipId}"><path d="${SHIELD_D}"/></clipPath></defs>
+  <path d="${SHIELD_D}" fill="#12141a" stroke="${ring}" stroke-width="6"/>
+  <path d="${SHIELD_D}" fill="none" stroke="${ring}" stroke-width="1.5" opacity="0.5" transform="translate(110,110) scale(0.9) translate(-110,-110)"/>
+  <g clip-path="url(#${clipId})">${markup}</g>
 </svg>`;
 }
 
@@ -44,18 +52,31 @@ function buildMarineSvg({ primary, secondary, trim, emblemPaths, helmet }) {
     `<path d="${p.d}" fill="${p.fill || 'none'}" stroke="${p.stroke || 'none'}" stroke-width="${(p.strokeWidth || 0) * 0.42}" stroke-linecap="round" stroke-linejoin="round"/>`
   ).join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
-  <polygon points="120,300 130,400 145,400 150,310 155,400 170,400 180,300" fill="${primary}"/>
-  <rect x="115" y="278" width="70" height="26" fill="${secondary}"/>
-  <path d="M110,175 L100,285 L200,285 L190,175 Z" fill="${primary}"/>
-  <polygon points="118,150 108,180 125,175" fill="${trim}"/>
-  <polygon points="182,150 192,180 175,175" fill="${trim}"/>
-  <ellipse cx="55" cy="195" rx="38" ry="34" fill="${secondary}" stroke="${trim}" stroke-width="3"/>
-  <g transform="translate(21,161) scale(0.31)">${emblemMarkup}</g>
-  <ellipse cx="245" cy="195" rx="38" ry="34" fill="${primary}" stroke="${trim}" stroke-width="3"/>
-  <rect x="88" y="185" width="26" height="95" rx="10" fill="${primary}"/>
-  <rect x="186" y="185" width="26" height="95" rx="10" fill="${primary}"/>
-  <ellipse cx="150" cy="110" rx="52" ry="58" fill="${helmetColor}"/>
-  <path d="M118,105 h26 v14 h-26 z M156,105 h26 v14 h-26 z M144,116 v18 h12 v-18 z" fill="${trim}"/>
+  <rect x="112" y="160" width="76" height="30" fill="${secondary}"/>
+  <path d="M108,150 L96,175 L104,178 L114,158 Z" fill="${secondary}"/>
+  <path d="M192,150 L204,175 L196,178 Z" fill="${secondary}"/>
+  <polygon points="118,296 126,392 138,398 143,310 157,310 162,398 174,392 182,296" fill="${primary}"/>
+  <rect x="112" y="380" width="30" height="16" fill="${trim}"/>
+  <rect x="158" y="380" width="30" height="16" fill="${trim}"/>
+  <rect x="113" y="274" width="74" height="28" fill="${secondary}"/>
+  <rect x="128" y="278" width="44" height="8" fill="${trim}" opacity="0.7"/>
+  <path d="M108,172 L98,282 L202,282 L192,172 Z" fill="${primary}"/>
+  <path d="M138,205 L150,195 L162,205 L156,225 L144,225 Z" fill="${trim}" opacity="0.85"/>
+  <polygon points="116,148 104,182 124,174" fill="${trim}"/>
+  <polygon points="184,148 196,182 176,174" fill="${trim}"/>
+  <ellipse cx="53" cy="193" rx="39" ry="35" fill="${secondary}" stroke="${trim}" stroke-width="3.5"/>
+  <g transform="translate(20,159) scale(0.32)">${emblemMarkup}</g>
+  <ellipse cx="247" cy="193" rx="39" ry="35" fill="${primary}" stroke="${trim}" stroke-width="3.5"/>
+  <rect x="86" y="183" width="27" height="98" rx="11" fill="${primary}"/>
+  <rect x="187" y="183" width="27" height="98" rx="11" fill="${primary}"/>
+  <rect x="86" y="255" width="27" height="10" fill="${secondary}"/>
+  <rect x="187" y="255" width="27" height="10" fill="${secondary}"/>
+  <ellipse cx="150" cy="108" rx="53" ry="59" fill="${helmetColor}"/>
+  <path d="M114,100 h30 v16 h-30 z M156,100 h30 v16 h-30 z M141,113 v22 h18 v-22 z" fill="${trim}"/>
+  <circle cx="129" cy="108" r="4" fill="#ff8a3d" opacity="0.9"/>
+  <circle cx="171" cy="108" r="4" fill="#ff8a3d" opacity="0.9"/>
+  <line x1="196" y1="85" x2="214" y2="55" stroke="${trim}" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="216" cy="52" r="4" fill="${trim}"/>
 </svg>`;
 }
 
