@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Adeptus Astartes — Легионы</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page-noise" aria-hidden="true"></div>
 <svg width="0" height="0" style="position:absolute">
   <symbol id="cornerCross" viewBox="0 0 40 40">
     <path d="M17,2 h6 v11 h11 v6 h-11 v11 h-6 v-11 h-11 v-6 h11 z" />
@@ -15,7 +17,7 @@
 <header class="site-header hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Adeptus Astartes: Легионы Космического Десанта</h1>
+    <h1>Adeptus Astartes:<br>Легионы Космического Десанта</h1>
     <p class="hero-subtitle">Хроники Первого Основания — девять орденов, сохранивших верность, и девять легионов, обратившихся к Хаосу</p>
     <nav class="tabs">
       <button class="tab-btn active" data-tab="orders">Ордена</button>
@@ -44,10 +46,15 @@
       <label for="mapLegionSelect">Легион:</label>
       <select id="mapLegionSelect"></select>
     </div>
-    <div class="map-wrap">
+    <div class="map-wrap" id="mapWrap">
       <svg class="corner-ornament corner-bl" viewBox="0 0 40 40"><use href="#cornerCross"/></svg>
       <svg class="corner-ornament corner-br" viewBox="0 0 40 40"><use href="#cornerCross"/></svg>
       <svg id="mapSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="map-zoom-controls">
+        <button class="map-zoom-btn" id="mapZoomIn" title="Приблизить">+</button>
+        <button class="map-zoom-btn" id="mapZoomOut" title="Отдалить">−</button>
+        <button class="map-zoom-btn map-zoom-reset" id="mapZoomReset" title="Сброс">FIT</button>
+      </div>
       <div class="map-popup hidden" id="mapPopup"></div>
     </div>
   </section>

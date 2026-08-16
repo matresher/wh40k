@@ -1,27 +1,101 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
-  <rect x="112" y="160" width="76" height="30" fill="#3a3a3a"/>
-  <path d="M108,150 L96,175 L104,178 L114,158 Z" fill="#3a3a3a"/>
-  <path d="M192,150 L204,175 L196,178 Z" fill="#3a3a3a"/>
-  <polygon points="118,296 126,392 138,398 143,310 157,310 162,398 174,392 182,296" fill="#161616"/>
-  <rect x="112" y="380" width="30" height="16" fill="#b8bfc7"/>
-  <rect x="158" y="380" width="30" height="16" fill="#b8bfc7"/>
-  <rect x="113" y="274" width="74" height="28" fill="#3a3a3a"/>
-  <rect x="128" y="278" width="44" height="8" fill="#b8bfc7" opacity="0.7"/>
-  <path d="M108,172 L98,282 L202,282 L192,172 Z" fill="#161616"/>
-  <path d="M138,205 L150,195 L162,205 L156,225 L144,225 Z" fill="#b8bfc7" opacity="0.85"/>
-  <polygon points="116,148 104,182 124,174" fill="#b8bfc7"/>
-  <polygon points="184,148 196,182 176,174" fill="#b8bfc7"/>
-  <ellipse cx="53" cy="193" rx="39" ry="35" fill="#3a3a3a" stroke="#b8bfc7" stroke-width="3.5"/>
-  <g transform="translate(20,159) scale(0.32)"><path d="M110.0,18.0 L130.2,34.7 L156.0,30.3 L165.2,54.8 L189.7,64.0 L185.3,89.8 L202.0,110.0 L185.3,130.2 L189.7,156.0 L165.2,165.2 L156.0,189.7 L130.2,185.3 L110.0,202.0 L89.8,185.3 L64.0,189.7 L54.8,165.2 L30.3,156.0 L34.7,130.2 L18.0,110.0 L34.7,89.8 L30.3,64.0 L54.8,54.8 L64.0,30.3 L89.8,34.7 Z" fill="none" stroke="#b8bfc7" stroke-width="3.36" stroke-linecap="round" stroke-linejoin="round"/><path d="M75,120 h70 v50 a35,35 0 0 1 -70,0 Z" fill="#b8bfc7" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M82,112 h14 v22 h-14 z M100,105 h14 v29 h-14 z M120,105 h14 v29 h-14 z M138,112 h14 v22 h-14 z" fill="#161616" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <ellipse cx="247" cy="193" rx="39" ry="35" fill="#161616" stroke="#b8bfc7" stroke-width="3.5"/>
-  <rect x="86" y="183" width="27" height="98" rx="11" fill="#161616"/>
-  <rect x="187" y="183" width="27" height="98" rx="11" fill="#161616"/>
-  <rect x="86" y="255" width="27" height="10" fill="#3a3a3a"/>
-  <rect x="187" y="255" width="27" height="10" fill="#3a3a3a"/>
-  <ellipse cx="150" cy="108" rx="53" ry="59" fill="#3a3a3a"/>
-  <path d="M114,100 h30 v16 h-30 z M156,100 h30 v16 h-30 z M141,113 v22 h18 v-22 z" fill="#b8bfc7"/>
-  <circle cx="129" cy="108" r="4" fill="#ff8a3d" opacity="0.9"/>
-  <circle cx="171" cy="108" r="4" fill="#ff8a3d" opacity="0.9"/>
-  <line x1="196" y1="85" x2="214" y2="55" stroke="#b8bfc7" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="216" cy="52" r="4" fill="#b8bfc7"/>
+  <!-- Power pack -->
+  <rect x="122" y="80" width="56" height="90" rx="4" fill="#2a2a2a"/>
+  <rect x="126" y="84" width="48" height="10" rx="2" fill="#b8bfc7" opacity="0.3"/>
+  <rect x="126" y="118" width="48" height="10" rx="2" fill="#b8bfc7" opacity="0.3"/>
+  <circle cx="138" cy="75" r="7" fill="#2a2a2a" stroke="#b8bfc7" stroke-width="1.5"/>
+  <circle cx="162" cy="75" r="7" fill="#2a2a2a" stroke="#b8bfc7" stroke-width="1.5"/>
+  <line x1="134" y1="98" x2="134" y2="114" stroke="#b8bfc7" stroke-width="1.5" opacity="0.25"/>
+  <line x1="150" y1="98" x2="150" y2="114" stroke="#b8bfc7" stroke-width="1.5" opacity="0.25"/>
+  <line x1="166" y1="98" x2="166" y2="114" stroke="#b8bfc7" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Gorget -->
+  <rect x="126" y="148" width="48" height="22" rx="4" fill="#2a2a2a"/>
+
+  <!-- Legs -->
+  <path d="M118,298 L126,384 L142,396 L144,312 Z" fill="#0a0a0a"/>
+  <path d="M182,298 L174,384 L158,396 L156,312 Z" fill="#0a0a0a"/>
+  <path d="M126,320 L142,320" stroke="#b8bfc7" stroke-width="1" opacity="0.2"/>
+  <path d="M158,320 L174,320" stroke="#b8bfc7" stroke-width="1" opacity="0.2"/>
+  <path d="M126,350 L140,350" stroke="#b8bfc7" stroke-width="1" opacity="0.2"/>
+  <path d="M160,350 L174,350" stroke="#b8bfc7" stroke-width="1" opacity="0.2"/>
+
+  <!-- Knee pads -->
+  <ellipse cx="134" cy="336" rx="11" ry="9" fill="#b8bfc7" opacity="0.75"/>
+  <ellipse cx="166" cy="336" rx="11" ry="9" fill="#b8bfc7" opacity="0.75"/>
+
+  <!-- Boots -->
+  <path d="M120,382 L144,382 L144,400 L118,400 Z" fill="#b8bfc7"/>
+  <path d="M156,382 L180,382 L182,400 L156,400 Z" fill="#b8bfc7"/>
+
+  <!-- Belt / waist -->
+  <rect x="110" y="274" width="80" height="26" fill="#2a2a2a"/>
+  <rect x="128" y="278" width="44" height="8" fill="#b8bfc7" opacity="0.45"/>
+  <path d="M143,286 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 Z" fill="#b8bfc7" opacity="0.6"/>
+
+  <!-- Torso -->
+  <path d="M106,168 L96,278 L204,278 L194,168 Z" fill="#0a0a0a"/>
+
+  <!-- Chest aquila -->
+  <path d="M116,212 L128,202 L138,207 L150,194 L162,207 L172,202 L184,212 L172,216 L162,210 L150,222 L138,210 L128,216 Z" fill="#b8bfc7" opacity="0.7"/>
+
+  <!-- Abdomen ribbing -->
+  <line x1="104" y1="236" x2="196" y2="236" stroke="#b8bfc7" stroke-width="0.8" opacity="0.18"/>
+  <line x1="102" y1="248" x2="198" y2="248" stroke="#b8bfc7" stroke-width="0.8" opacity="0.18"/>
+  <line x1="100" y1="260" x2="200" y2="260" stroke="#b8bfc7" stroke-width="0.8" opacity="0.18"/>
+
+  <!-- Pauldron trim arcs -->
+  <path d="M16,192 Q58,220 100,192" fill="none" stroke="#b8bfc7" stroke-width="2.5" opacity="0.4"/>
+  <path d="M200,192 Q242,220 284,192" fill="none" stroke="#b8bfc7" stroke-width="2.5" opacity="0.4"/>
+
+  <!-- Left shoulder pad (emblem) -->
+  <ellipse cx="58" cy="190" rx="42" ry="36" fill="#2a2a2a" stroke="#b8bfc7" stroke-width="4"/>
+  <g transform="translate(20,155) scale(0.35)"><path d="M110.0,17.0 L129.2,33.5 L154.0,28.8 L162.3,52.7 L186.2,61.0 L181.5,85.8 L198.0,105.0 L181.5,124.2 L186.2,149.0 L162.3,157.3 L154.0,181.2 L129.2,176.5 L110.0,193.0 L90.8,176.5 L66.0,181.2 L57.7,157.3 L33.8,149.0 L38.5,124.2 L22.0,105.0 L38.5,85.8 L33.8,61.0 L57.7,52.7 L66.0,28.8 L90.8,33.5 Z" fill="none" stroke="#e0e0e0" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"/><path d="M78,148 L78,95 L85,78 L95,65 L125,65 L135,78 L142,95 L142,148 Q142,162 110,162 Q78,162 78,148 Z" fill="#e0e0e0" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M88,78 L92,58 Q96,50 102,58 L102,78 Z" fill="#b0b8c0" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M102,78 L106,54 Q110,46 114,54 L118,78 Z" fill="#b0b8c0" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M118,78 L122,58 Q126,50 132,58 L132,78 Z" fill="#b0b8c0" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M78,115 L62,100 Q56,94 62,84 L75,74 L85,80 L78,98 Z" fill="#e0e0e0" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/><path d="M84,78 L136,78" fill="none" stroke="#505860" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M82,108 L138,108 M82,132 L138,132" fill="none" stroke="#505860" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- Right shoulder pad -->
+  <ellipse cx="242" cy="190" rx="42" ry="36" fill="#0a0a0a" stroke="#b8bfc7" stroke-width="4"/>
+
+  <!-- Left arm -->
+  <rect x="84" y="192" width="28" height="86" rx="12" fill="#0a0a0a"/>
+  <rect x="86" y="250" width="24" height="10" fill="#2a2a2a"/>
+  <rect x="86" y="268" width="24" height="18" rx="4" fill="#0a0a0a"/>
+
+  <!-- Right arm -->
+  <rect x="188" y="192" width="28" height="86" rx="12" fill="#0a0a0a"/>
+  <rect x="190" y="250" width="24" height="10" fill="#2a2a2a"/>
+  <rect x="190" y="268" width="24" height="18" rx="4" fill="#0a0a0a"/>
+
+  <!-- Bolter -->
+  <rect x="218" y="260" width="48" height="14" rx="3" fill="#2a2a2a"/>
+  <rect x="220" y="256" width="10" height="22" rx="2" fill="#333"/>
+  <rect x="260" y="262" width="12" height="8" rx="1" fill="#1a1a1a"/>
+
+  <!-- Helmet -->
+  <path d="M112,100 Q112,46 150,40 Q188,46 188,100 Q188,134 150,140 Q112,134 112,100 Z" fill="#0a0a0a"/>
+
+  <!-- Faceplate -->
+  <path d="M122,84 L178,84 L182,96 L182,112 L172,118 L128,118 L118,112 L118,96 Z" fill="#b8bfc7" opacity="0.22"/>
+
+  <!-- T-visor -->
+  <rect x="120" y="88" width="24" height="13" fill="#b8bfc7"/>
+  <rect x="156" y="88" width="24" height="13" fill="#b8bfc7"/>
+  <rect x="141" y="97" width="18" height="20" fill="#b8bfc7"/>
+
+  <!-- Eye lenses -->
+  <circle cx="132" cy="95" r="5.5" fill="#ff8a3d" opacity="0.95"/>
+  <circle cx="168" cy="95" r="5.5" fill="#ff8a3d" opacity="0.95"/>
+  <circle cx="130" cy="93" r="2" fill="#ffd090" opacity="0.7"/>
+  <circle cx="166" cy="93" r="2" fill="#ffd090" opacity="0.7"/>
+
+  <!-- Breathing grille -->
+  <rect x="136" y="118" width="28" height="14" rx="2" fill="#b8bfc7" opacity="0.22"/>
+  <line x1="142" y1="120" x2="142" y2="130" stroke="#0a0a0a" stroke-width="2.5" opacity="0.5"/>
+  <line x1="150" y1="120" x2="150" y2="130" stroke="#0a0a0a" stroke-width="2.5" opacity="0.5"/>
+  <line x1="158" y1="120" x2="158" y2="130" stroke="#0a0a0a" stroke-width="2.5" opacity="0.5"/>
+
+  <!-- Antenna -->
+  <line x1="185" y1="76" x2="210" y2="48" stroke="#b8bfc7" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="212" cy="46" r="4" fill="#b8bfc7"/>
+
+  
 </svg>
