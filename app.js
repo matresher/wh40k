@@ -249,14 +249,19 @@ function renderMapTab() {
     `<text class="segmentum-label" x="${s.x}" y="${s.y}" text-anchor="middle">${s.name.toUpperCase()}</text>`
   ).join('');
 
+  const defs = LOCATIONS.map(loc => `
+    <pattern id="planet-img-${loc.id}" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="assets/planets/${loc.id}.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"></image>
+    </pattern>`).join('');
+
   const points = LOCATIONS.map(loc => `
     <g class="map-point-group" data-id="${loc.id}">
-      <circle class="map-point-halo" cx="${loc.x}" cy="${loc.y}" r="13"></circle>
-      <circle class="map-point" data-id="${loc.id}" cx="${loc.x}" cy="${loc.y}" r="5.5"></circle>
-      <text class="map-label" x="${loc.x + 9}" y="${loc.y + 4}">${loc.name}</text>
+      <circle class="map-point-halo" cx="${loc.x}" cy="${loc.y}" r="15"></circle>
+      <circle class="map-point" data-id="${loc.id}" cx="${loc.x}" cy="${loc.y}" r="8" style="fill:url(#planet-img-${loc.id})"></circle>
+      <text class="map-label" x="${loc.x + 12}" y="${loc.y + 4}">${loc.name}</text>
     </g>`).join('');
 
-  svg.innerHTML = `<g class="map-stars">${stars}</g><g class="map-segmenta">${segLabels}</g><g class="map-points">${points}</g>`;
+  svg.innerHTML = `<defs>${defs}</defs><g class="map-stars">${stars}</g><g class="map-segmenta">${segLabels}</g><g class="map-points">${points}</g>`;
 
   svg.querySelectorAll('.map-point').forEach(el => {
     el.addEventListener('click', () => showLocationPopup(el.dataset.id, window.__selectedMapLegion || null));
@@ -301,7 +306,7 @@ function showLocationPopup(locationId, slug) {
   if (!loc) return;
   const relevant = slug ? [bySlug(slug)].filter(Boolean)
     : LEGIONS.filter(l => l.homeworldLocationId === locationId || l.timeline.some(ev => ev.locationId === locationId));
-  let body = `<h4>${loc.name}</h4><p class="map-popup-meta">${loc.segmentum}</p><p>${loc.blurb}</p>`;
+  let body = `<img class="map-popup-img" src="assets/planets/${loc.id}.jpg" alt="${loc.name}"><h4>${loc.name}</h4><p class="map-popup-meta">${loc.segmentum}</p><p>${loc.blurb}</p>`;
   for (const rl of relevant) {
     const events = rl.timeline.filter(ev => ev.locationId === locationId);
     const isHome = rl.homeworldLocationId === locationId;

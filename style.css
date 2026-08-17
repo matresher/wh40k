@@ -625,9 +625,10 @@ main { max-width: 1200px; margin: 0 auto; }
 .map-star { fill: #ffffff; }
 .segmentum-label { fill: rgba(217,221,227,0.16); font-size: 19px; letter-spacing: 3px; font-weight: bold; pointer-events: none; }
 .map-point-halo { fill: #bf7fff; filter: blur(4px); opacity: 0.55; pointer-events: none; }
-.map-point-group.dimmed .map-point-halo { opacity: 0.12; }
-.map-point { fill: #bf7fff; stroke: #0b0d10; stroke-width: 1; cursor: pointer; }
-.map-point-group.dimmed .map-point { fill: #3a3f47; opacity: 0.5; }
+.map-point-group.dimmed .map-point-halo { opacity: 0.1; }
+.map-point { stroke: #bf7fff; stroke-width: 1.2; cursor: pointer; transition: stroke 0.2s, opacity 0.2s, filter 0.2s; }
+.map-point-group:hover .map-point { stroke: #ffffff; }
+.map-point-group.dimmed .map-point { opacity: 0.35; filter: grayscale(1); stroke: #3a3f47; }
 .map-label { fill: #d9dde3; font-size: 9px; pointer-events: none; }
 .map-point-group.dimmed .map-label { fill: var(--muted); opacity: 0.4; }
 .map-path { fill: none; stroke-width: 1.5; opacity: 0.85; filter: drop-shadow(0 0 3px rgba(191,127,255,0.5)); }
@@ -645,6 +646,14 @@ main { max-width: 1200px; margin: 0 auto; }
   line-height: 1.55;
   box-shadow: 0 4px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.3);
   animation: detailSlideIn 0.35s var(--ease-out);
+}
+.map-popup-img {
+  display: block;
+  width: calc(100% + 2.4rem);
+  height: 150px;
+  object-fit: cover;
+  margin: -1.2rem -1.2rem 0.8rem;
+  border-bottom: 1px solid rgba(160,170,190,0.2);
 }
 .map-popup h4 { margin: 0 0 0.15rem; color: var(--accent); font-size: 1rem; }
 .map-popup-meta { color: var(--muted); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; margin: 0 0 0.6rem; }
